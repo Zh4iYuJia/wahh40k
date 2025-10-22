@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\CMakeFiles\41aa4d27eae0f342fd16de83334ffd57\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8FCB70F5-F90F-3B0D-B850-DC6BC63B8744}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

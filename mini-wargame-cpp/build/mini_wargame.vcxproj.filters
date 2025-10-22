@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\advance_phase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\phase_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\selection_phase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\shooting_phase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\units\unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\units\weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\utils\rng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E5D1D267-D673-3583-8E5F-C413B0B16B47}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

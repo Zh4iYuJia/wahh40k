@@ -1,0 +1,10 @@
+^C:\USERS\MST\DESKTOP\DEV\WAHH40K\MINI-WARGAME-CPP\BUILD\CMAKEFILES\41AA4D27EAE0F342FD16DE83334FFD57\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/mst/Desktop/Dev/Wahh40k/mini-wargame-cpp -BC:/Users/mst/Desktop/Dev/Wahh40k/mini-wargame-cpp/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/mst/Desktop/Dev/Wahh40k/mini-wargame-cpp/build/MiniWargame.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

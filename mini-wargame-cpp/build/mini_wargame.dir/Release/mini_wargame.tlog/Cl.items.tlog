@@ -1,0 +1,9 @@
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\game.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\game.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\main.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\main.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\advance_phase.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\advance_phase.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\phase_manager.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\phase_manager.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\selection_phase.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\selection_phase.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\phases\shooting_phase.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\shooting_phase.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\units\unit.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\unit.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\units\weapon.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\weapon.obj
+C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\src\utils\rng.cpp;C:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp\build\mini_wargame.dir\Release\rng.obj
