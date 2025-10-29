@@ -25,6 +25,7 @@
 在项目根目录打开 PowerShell 或 Git Bash：
 ```powershell
 g++ base.cpp -o base.exe
+```
 
 ##  游戏玩法（简要）
 启动后若存在 weapons.txt，程序会显示武器目录；玩家通过输入编号（1、2、3…）为每个单位选择两把武器。
