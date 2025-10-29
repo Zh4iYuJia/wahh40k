@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
+#include <conio.h>
 
 
 using namespace std;
@@ -186,5 +187,7 @@ chooseTwoFromCatalog(csm, catalog, "CSM");
     }
 
     cout << "Game over.\n";
+    cout << "Press any key to exit...";
+    _getch(); // wait for any key (no Enter required)
     return 0;
 }
