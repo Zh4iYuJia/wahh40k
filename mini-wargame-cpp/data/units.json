@@ -1,0 +1,61 @@
+{
+  "units": [
+    {
+      "name": "Space Marine",
+      "health": 100,
+      "armor": 3,
+      "weapons": [
+        {
+          "name": "Bolter",
+          "type": "ranged",
+          "damage": 10,
+          "range": 30
+        },
+        {
+          "name": "Chainsword",
+          "type": "melee",
+          "damage": 8,
+          "range": 1
+        }
+      ]
+    },
+    {
+      "name": "Ork Boy",
+      "health": 80,
+      "armor": 2,
+      "weapons": [
+        {
+          "name": "Shoota",
+          "type": "ranged",
+          "damage": 7,
+          "range": 24
+        },
+        {
+          "name": "Choppa",
+          "type": "melee",
+          "damage": 6,
+          "range": 1
+        }
+      ]
+    },
+    {
+      "name": "Eldar Guardian",
+      "health": 70,
+      "armor": 1,
+      "weapons": [
+        {
+          "name": "Shuriken Catapult",
+          "type": "ranged",
+          "damage": 5,
+          "range": 36
+        },
+        {
+          "name": "Power Sword",
+          "type": "melee",
+          "damage": 9,
+          "range": 1
+        }
+      ]
+    }
+  ]
+}
