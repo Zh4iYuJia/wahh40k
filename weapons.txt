@@ -1,7 +1,7 @@
 # format: name damage shots hit_threshold
 Boltgun 3 4 4
-StormBolter 2 5 5
-PlasmaGun 5 2 5
-Lasgun 1 2 2
-HeavyBolter 4 3 4
+BoltPistol 3 2 4
+PlasmaGun 5 2 4
+HeavyBolter 3 6 5
 Chainsword 2 5 4
+PowerSword 3 4 4
