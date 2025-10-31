@@ -1,7 +1,7 @@
 # 迷你战棋 / Mini Wargame
 
 一个极简的 C++ 文本游戏，模拟两方（SM 与 CSM）各自装备两把武器进行回合射击的流程。每次射击逐发掷骰并显示结果，命中后按（命中数 × 单发伤害）计算总伤害。  
-<del>马斯特上课时的无心之作,因为课太无聊+太想打锤<del>
+<del>马斯特上课时的无心之作,因为课太无聊+太想打锤</del>
 A minimal single-file C++ text game where two sides (SM and CSM) each equip two weapons and take turns shooting. Each shot rolls dice per projectile, displays rolls, and applies damage = hits × weapon damage.
 
 ---
