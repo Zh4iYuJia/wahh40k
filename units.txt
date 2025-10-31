@@ -1,0 +1,8 @@
+# 格式：Name HP weaponIndex1 weaponIndex2 ...
+# weaponIndex 为 weapons.txt 中的 1-based 序号（例如 weapons.txt 第1行为索引1）
+# 示例单位模板
+
+Scout 12 1 2 3
+Reveier 18 4 5
+Intercessor 20 2 3 4 5 6
+Captain 20 1 4 5
