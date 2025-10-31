@@ -21,6 +21,11 @@ A minimal single-file C++ text game where two sides (SM and CSM) each equip two 
 - `units.txt` — 单位模板（可选，指定单位名、HP、允许武器索引）。Unit templates (optional: name HP weaponIndex...).  
 - `readme.md` — 本说明。This README.
 
+### 关于原项目文件夹 / About the original project folder
+- 项目路径 / Path: c:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp  
+- 说明（中文）：该文件夹包含原始的多文件 C++ 项目（更完整的实现尝试例如冲锋阶段射击阶段），但由于存在多处编译/接口/逻辑错误，最终放弃，转而使用当前的单文件简化实现（base.cpp）。如果你有 C++、CMake 和 VS/MSVC 调试经验，欢迎进入该文件夹尝试修复（建议先运行 cmake 配置并查看 build 目录的错误，逐步解决头文件包含、类接口不匹配、编码问题等）。修复后可提交 PR 或与作者沟通合并。  
+- Note (English): The folder above contains the original multi-file C++ project (mini-wargame-cpp). It was abandoned because of many compile/interface/logic issues; the current simplified single-file approach (base.cpp) is used instead. If you have C++/CMake/MSVC experience you can try repairing it: open the folder, run cmake to configure, inspect build errors, and fix include paths, class/interface mismatches, encoding and other issues. Contributions or PRs are welcome.
+
 ---
 
 ## weapons.txt 格式 / weapons.txt format
