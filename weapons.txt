@@ -1,6 +1,7 @@
-Boltgun 3 4 4   
-BoltPistol 3 2 4
-Marksman Bolter 3 3 3
+Boltgun 3 4 4
+HeavyBoltPistol 4 2 3
+MarksmanCarbine 3 3 2
+SharpShooter 8 1 2
 PlasmaGun 5 2 4
 HeavyBolter 3 6 5
 Chainsword 2 5 4
