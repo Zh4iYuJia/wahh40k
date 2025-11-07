@@ -2,7 +2,7 @@
 # weaponIndex 为 weapons.txt 中的 1-based 序号（例如 weapons.txt 第1行为索引1）
 # 示例单位模板
 
-Phobos 15 2 3 4 7
+Phobos 15 2 3 4
 Tactical 18 1 2 5 7
 Gravis 20 5 6
 Terminator 20 2 6 8

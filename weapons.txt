@@ -5,5 +5,6 @@ SharpShooter 8 1 2
 PlasmaGun 5 2 4
 HeavyBolter 3 6 5
 Chainsword 2 5 4
-PowerSword 3 4 4
+PowerSword 4 4 4
+StormBolter 2 8 5
 # format: name damage shots hit_threshold
