@@ -141,7 +141,6 @@ int main() {
     Unit sm{"SM", 20}, csm{"CSM", 20};
 
 
-// ...existing code...
     // cout << "Configure weapons for SM (two weapons a and b):\n";
     // sm.a.name = "a";
     // inputWeapon(sm.a, "a");
@@ -216,7 +215,7 @@ auto loadUnitTemplates = [](const std::string& path) {
         if (!(iss >> ut.name >> ut.hp)) continue;
         int idx;
         while (iss >> idx) {
-            ut.allowedWeaponIndices.push_back(idx - 1); // 文件里使用 1-based 索引
+            ut.allowedWeaponIndices.push_back(idx - 1);
         }
         templates.push_back(ut);
     }
