@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Wargame</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Mini Wargame: SM vs CSM</h1>
+    <div id="game">
+        <div id="unit-selection">
+            <h2>Select Units</h2>
+            <div id="units-list"></div>
+        </div>
+        <div id="battle">
+            <div id="turn-indicator">Current Turn: SM</div>
+            <div id="sm-unit">
+                <h3>Space Marine</h3>
+                <p id="sm-hp">HP: 20</p>
+                <button id="sm-attack-a">Attack with Weapon A</button>
+                <button id="sm-attack-b">Attack with Weapon B</button>
+            </div>
+            <div id="csm-unit">
+                <h3>Chaos Space Marine</h3>
+                <p id="csm-hp">HP: 20</p>
+                <button id="csm-attack-a">Attack with Weapon A</button>
+                <button id="csm-attack-b">Attack with Weapon B</button>
+            </div>
+            <div id="log"></div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

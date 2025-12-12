@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#game {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#unit-selection {
+    margin-bottom: 20px;
+}
+
+#units-list {
+    display: flex;
+    gap: 10px;
+}
+
+.unit-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.unit-card.selected {
+    background-color: lightblue;
+}
+
+#battle {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sm-unit, #csm-unit {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#log {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    height: 200px;
+    overflow-y: scroll;
+}
