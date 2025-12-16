@@ -20,6 +20,14 @@
 - `units.txt` — 单位模板（可选，指定单位名、HP、允许武器索引）  
 - `readme.md` — 本说明
 
+## 仓库结构（概要）
+- `base.cpp` — 单文件的小游戏可执行实现（快速上手）。
+- `mini-wargame-fullsuite/` — 更完整的多文件 C++ 项目，含 `CMakeLists.txt` 与 `src/`、`include/`、`tests/` 等；该子项目在 `build/` 中有生成文件与 VS 工程。该分支曾经部分实现多阶段流程但存在若干编译/逻辑问题。
+- `Wahh40k_Web/` — 基于 Node/Express 的 Web 前端/后端示例（含 `server.js`、`public/` 静态资源与 `package.json`）
+- `weapons.txt`, `units.txt`, `units.json`/`data/` — 示例或运行所需的数据文件。
+
+（详见仓库根目录以确认最新文件）
+
 ### 关于原项目文件夹
 - 项目路径：`c:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp`  
 - 说明：该文件夹包含原始的多文件 C++ 项目（更完整的实现尝试，例如冲锋阶段、射击阶段），但由于存在多处编译/接口/逻辑错误，维护者最终放弃，转而使用当前的单文件简化实现（`base.cpp`）。如果你具备 C++、CMake 与 MSVC 调试经验，欢迎进入该文件夹尝试修复：先运行 `cmake` 配置并查看 `build` 目录的错误，然后逐步修复头文件包含、类接口不匹配、编码问题等。修复后可提交 PR 或与作者沟通合并。
@@ -106,9 +114,24 @@ A minimal single-file C++ text game where two sides (SM and CSM) each equip two 
 - `units.txt` — Unit templates (optional: name HP weaponIndex...)  
 - `readme.md` — This README
 
-### About the original project folder
-- Path: `c:\Users\mst\Desktop\Dev\Wahh40k\mini-wargame-cpp`  
-- Note: That folder contains the original multi-file C++ project (more complete implementation attempts, e.g., advance and shooting phases). It was abandoned due to numerous compile/interface/logic issues; the simplified single-file approach (`base.cpp`) is used instead. If you have experience with C++, CMake and MSVC, you can try to repair it: run `cmake` to configure, inspect the build errors in `build`, and fix include paths, class/interface mismatches, encoding and other issues. Contributions or PRs are welcome.
+
+---
+
+## Web 版本（`Wahh40k_Web`）
+在 `Wahh40k_Web` 目录包含一个小型 Express 服务，可以提供 `public/` 中的前端页面并使用本地 SQLite 数据库（若使用）。启动方法：
+
+```powershell
+cd Wahh40k_Web
+npm install
+npm start
+```
+
+服务默认入口为 `server.js`（参见 `package.json` 中的 `start` 脚本）。
+
+---
+
+## 许可证
+本仓库使用 MIT 许可证（参见根目录的 `LICENSE` 文件）。
 
 ---
 
