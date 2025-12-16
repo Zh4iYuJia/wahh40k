@@ -66,3 +66,26 @@ button:hover {
     height: 200px;
     overflow-y: scroll;
 }
+
+/* Mute button in bottom-right */
+#mute-btn {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#mute-btn:hover {
+    background: rgba(0,0,0,0.8);
+}

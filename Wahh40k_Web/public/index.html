@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Wargame</title>
+    <title>Wahhh40k</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mini Wargame: SM vs CSM</h1>
+    <h1>Wahhh40k</h1>
     <div id="game">
         <div id="unit-selection">
             <h2>Select Units</h2>
             <div id="units-list"></div>
         </div>
         <div id="battle">
-            <div id="turn-indicator">Current Turn: SM</div>
+            <div id="turn-indicator">Current Turn: Player1</div>
             <div id="sm-unit">
                 <h3>Space Marine</h3>
                 <p id="sm-hp">HP: 20</p>
@@ -30,6 +30,11 @@
             <div id="log"></div>
         </div>
     </div>
+    <!-- Background music (place your file at public/audio/bgm.mp3) -->
+    <audio id="bgm" src="audio/bgm.mp3" loop></audio>
+
+    <!-- Mute button -->
+    <button id="mute-btn" aria-label="Mute / Unmute">🔊</button>
     <script src="game.js"></script>
 </body>
 </html>

@@ -17,6 +17,31 @@ A web-based turn-based wargame inspired by Warhammer 40k, ported from a C++ cons
 3. Navigate to the `web-game` directory.
 4. Run `npm install` to install dependencies.
 5. Run `npm start` to start the server.
+### Note about database and schema changes
+
+If you modify `schema.sql` (add/remove units or weapons), the server will not automatically apply those INSERT changes to an existing `game.db` database file. The initialization logic only inserts sample data when the database is first created to avoid duplicating rows on each restart.
+
+To apply schema INSERT changes, either:
+
+- Delete the existing `game.db` so the server recreates it from `schema.sql` on next start:
+
+```powershell
+cd C:\Users\mst\Desktop\Dev\Wahh40k\Wahh40k_Web
+Remove-Item .\game.db
+node .\server.js
+```
+
+- Or run the new INSERT statements directly against the existing database using `sqlite3` or a small Node.js script to insert only the new rows (safer when you want to preserve runtime data).
+
+Example using `sqlite3` CLI:
+
+```powershell
+sqlite3 .\game.db
+-- paste your INSERT INTO ...; statements here
+.exit
+```
+
+This README describes both approaches; choose the one appropriate for whether you want to reset the database or preserve existing data.
 6. Open `http://localhost:3000` in your browser.
 
 ## Usage
@@ -68,7 +93,7 @@ MIT License
 4. 运行`npm install`安装依赖。
 5. 运行`npm start`启动服务器。
 6. 在浏览器中打开`http://localhost:3000`。
-
+(调试期间直接文件夹内打开终端使用 node server.js运行)
 ## 使用方法
 
 1. 选择两个单位（一个给SM，一个给CSM）。

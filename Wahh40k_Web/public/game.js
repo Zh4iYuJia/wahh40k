@@ -7,6 +7,8 @@ let csmUnit = null;
 let currentTurn = 'sm'; // 'sm' or 'csm'
 let gameLog = [];
 let turnCount = 0;
+let bgmElement = null;
+let isMuted = false;
 
 // Dice roll function
 function rollDie() {
@@ -35,13 +37,70 @@ function resolveShooting(attacker, defender, weapon) {
 
 // Update stats (placeholder, can integrate with stats.js if needed)
 function updateStats(winner, turns) {
-    console.log(`Game ended: ${winner} won in ${turns} turns`);
-    // Here you can call stats.updateStats(winner, turns);
+    const w = String(winner || '').toLowerCase();
+    const displayWinner = (w === 'sm' || w === 'player1') ? 'Player1' : (w === 'csm' || w === 'player2') ? 'Player2' : winner;
+    console.log(`Game ended: ${displayWinner} won in ${turns} turns`);
+    // Here you can call stats.updateStats(displayWinner.toLowerCase(), turns);
 }
 
 // Update log
 function updateLog() {
     document.getElementById('log').innerHTML = gameLog.join('<br><br>');
+}
+
+// Audio controls
+function initAudio() {
+    bgmElement = document.getElementById('bgm');
+    const muteBtn = document.getElementById('mute-btn');
+    try {
+        const saved = localStorage.getItem('bgmMuted');
+        isMuted = saved === 'true';
+    } catch (e) {
+        isMuted = false;
+    }
+    updateMuteButton();
+    if (muteBtn) {
+        muteBtn.addEventListener('click', () => {
+            isMuted = !isMuted;
+            try { localStorage.setItem('bgmMuted', String(isMuted)); } catch(e){}
+            updateMuteButton();
+            if (isMuted) pauseBGM(); else playBGM();
+        });
+    }
+    // Do not autoplay on page load. Music will play only when entering battle.
+}
+
+function updateMuteButton() {
+    const muteBtn = document.getElementById('mute-btn');
+    if (!muteBtn) return;
+    muteBtn.textContent = isMuted ? '🔇' : '🔊';
+}
+
+function playBGM() {
+    if (!bgmElement || isMuted) return Promise.resolve();
+    // play may return a promise
+    try {
+        const p = bgmElement.play();
+        if (p && p.catch) p.catch(()=>{});
+        return p;
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
+
+function pauseBGM() {
+    if (!bgmElement) return;
+    try { bgmElement.pause(); } catch(e){}
+}
+
+function playForMenu(menu) {
+    // menu: 'selection' or 'battle'
+    if (menu === 'battle') {
+        if (!isMuted) playBGM();
+    } else {
+        // pause for selection or other menus
+        pauseBGM();
+    }
 }
 
 // Update HP display
@@ -57,25 +116,27 @@ function updateHP() {
 
 // Update turn indicator
 function updateTurnIndicator() {
-    const turnText = currentTurn === 'sm' ? 'SM' : 'CSM';
+    const turnText = currentTurn === 'sm' ? 'Player1' : 'Player2';
     document.getElementById('turn-indicator').textContent = `Current Turn: ${turnText}`;
 }
 
 // Check for win
 function checkWin() {
-    if (smUnit.hp <= 0) {
-        alert('CSM wins!');
-        updateStats('csm', turnCount);
-        resetGame();
-    } else if (csmUnit.hp <= 0) {
-        alert('SM wins!');
-        updateStats('sm', turnCount);
-        resetGame();
+    if (smUnit && smUnit.hp <= 0) {
+        alert('Player2 wins!');
+        updateStats('player2', turnCount);
+        // reset but keep music playing
+        resetGame(true);
+    } else if (csmUnit && csmUnit.hp <= 0) {
+        alert('Player1 wins!');
+        updateStats('player1', turnCount);
+        // reset but keep music playing
+        resetGame(true);
     }
 }
 
 // Reset game
-function resetGame() {
+function resetGame(keepPlaying = false) {
     smUnit = null;
     csmUnit = null;
     gameLog = [];
@@ -84,6 +145,18 @@ function resetGame() {
     document.getElementById('battle').style.display = 'none';
     document.getElementById('unit-selection').style.display = 'block';
     loadUnits();
+
+    // restore default button labels
+    const smA = document.getElementById('sm-attack-a');
+    const smB = document.getElementById('sm-attack-b');
+    const csmA = document.getElementById('csm-attack-a');
+    const csmB = document.getElementById('csm-attack-b');
+    if (smA) smA.textContent = 'Attack with Weapon A';
+    if (smB) smB.textContent = 'Attack with Weapon B';
+    if (csmA) csmA.textContent = 'Attack with Weapon A';
+    if (csmB) csmB.textContent = 'Attack with Weapon B';
+    // switch audio to selection context unless caller wants to keep playing
+    if (!keepPlaying) playForMenu('selection');
 }
 
 // Load units from API
@@ -122,12 +195,24 @@ function selectUnit(unit) {
         smUnit = { ...unit, hp: unit.hp };
         document.getElementById('sm-unit').querySelector('h3').textContent = unit.name;
         updateHP();
+        // update SM attack button labels with actual weapon names
+        const smA = document.getElementById('sm-attack-a');
+        const smB = document.getElementById('sm-attack-b');
+        if (smA) smA.textContent = `Fire: ${smUnit.weapon_a_name || 'Weapon A'}`;
+        if (smB) smB.textContent = `Fire: ${smUnit.weapon_b_name || 'Weapon B'}`;
     } else if (!csmUnit) {
         csmUnit = { ...unit, hp: unit.hp };
         document.getElementById('csm-unit').querySelector('h3').textContent = unit.name;
         updateHP();
+        // update CSM attack button labels with actual weapon names
+        const csmA = document.getElementById('csm-attack-a');
+        const csmB = document.getElementById('csm-attack-b');
+        if (csmA) csmA.textContent = `Fire: ${csmUnit.weapon_a_name || 'Weapon A'}`;
+        if (csmB) csmB.textContent = `Fire: ${csmUnit.weapon_b_name || 'Weapon B'}`;
         document.getElementById('unit-selection').style.display = 'none';
         document.getElementById('battle').style.display = 'flex';
+        // switch audio to battle context
+        playForMenu('battle');
     }
 }
 
@@ -165,4 +250,5 @@ document.getElementById('csm-attack-b').onclick = () => {
 };
 
 // Initialize
+initAudio();
 loadUnits();
